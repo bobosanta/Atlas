@@ -12,6 +12,7 @@ class Country {
     
     var name : String = ""
     var capital : String = ""
+    var currency = ""
  
     init(name: String, capital: String) {
         self.name = name
