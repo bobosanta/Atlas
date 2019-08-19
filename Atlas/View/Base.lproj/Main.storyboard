@@ -320,14 +320,66 @@
                         <viewLayoutGuide key="safeArea" id="yci-zx-KHy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countries" id="WYq-mV-BCX"/>
+                    <navigationItem key="navigationItem" id="JHx-1D-YOF"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="countriesTableView" destination="aQl-ke-n4t" id="RP4-px-Bm2"/>
+                        <segue destination="x8h-PG-tYm" kind="show" identifier="showCountryDetails" id="OM4-hc-7Vd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAi-lk-9wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5521.739130434783" y="-194.19642857142856"/>
+            <point key="canvasLocation" x="6729" y="-222"/>
+        </scene>
+        <!--Country Details View Controller-->
+        <scene sceneID="bla-cI-iEf">
+            <objects>
+                <viewController id="x8h-PG-tYm" customClass="CountryDetailsViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DML-DM-eyS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ok8-BV-uKo">
+                                <rect key="frame" x="8" y="418" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ok8-BV-uKo" firstAttribute="leading" secondItem="T7h-Kl-POZ" secondAttribute="leading" constant="8" id="2lJ-vk-u2R"/>
+                            <constraint firstItem="T7h-Kl-POZ" firstAttribute="trailing" secondItem="Ok8-BV-uKo" secondAttribute="trailing" constant="8" id="2qS-cv-gb1"/>
+                            <constraint firstItem="Ok8-BV-uKo" firstAttribute="centerY" secondItem="T7h-Kl-POZ" secondAttribute="centerY" id="3qt-UH-GZB"/>
+                            <constraint firstItem="Ok8-BV-uKo" firstAttribute="centerX" secondItem="T7h-Kl-POZ" secondAttribute="centerX" id="CcP-9L-yV7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T7h-Kl-POZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a64-dd-cqe"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="Ok8-BV-uKo" id="yIb-Ka-OG3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScB-pW-VkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7461" y="-222"/>
+        </scene>
+        <!--Countries-->
+        <scene sceneID="bDv-vU-F7X">
+            <objects>
+                <navigationController id="mn4-ij-Oyg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Countries" id="a9t-1Z-SJ2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h13-oe-Ep1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="j7y-Zt-owj" kind="relationship" relationship="rootViewController" id="jHy-1E-p76"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzm-be-C0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5522" y="-222"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MLW-15-xda">
@@ -341,9 +393,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="j7y-Zt-owj" kind="relationship" relationship="viewControllers" id="Taf-mf-X1D"/>
                         <segue destination="1Bw-fO-PZR" kind="relationship" relationship="viewControllers" id="WKX-If-H3j"/>
                         <segue destination="EzF-Mk-F83" kind="relationship" relationship="viewControllers" id="uj2-Rk-nYw"/>
+                        <segue destination="mn4-ij-Oyg" kind="relationship" relationship="viewControllers" id="Idy-vT-GcR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJS-aW-PWW" userLabel="First Responder" sceneMemberID="firstResponder"/>

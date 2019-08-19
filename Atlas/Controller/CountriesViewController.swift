@@ -13,6 +13,7 @@ import SwiftyJSON
 class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var countriesArray = [Country]()
+    var selectedCountry: Country?
     
     @IBOutlet weak var countriesTableView: UITableView!
     
@@ -56,9 +57,10 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
             
             if let responseData = responseData.result.value as! [[String: Any]]? {
                 
-                for country:[String:Any] in responseData {
-                    if let name = country["name"] as? String,
-                        let capital = country["capital"] as? String {
+                for countryDictionary:[String:Any] in responseData {
+                    if let name = countryDictionary["name"] as? String,
+                        let capital = countryDictionary["capital"] as? String {
+//                        let currency = countryDictionary["currency"] as? String
                     
                         let country = Country(name: name, capital: capital)
                         self.countriesArray.append(country)
@@ -69,20 +71,23 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    //Write the updateWeatherData method here:
-    func updateCountryData(json: JSON) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedCountry = countriesArray[indexPath.row]
+        
+        performSegue(withIdentifier: "showCountryDetails", sender: self)
+        
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let vc = segue.destination as? CountryDetailsViewController {
+            
+            vc.country = selectedCountry
+            
+        }
+        
     }
-    */
-
 
 }

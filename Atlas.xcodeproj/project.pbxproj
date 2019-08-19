@@ -12,6 +12,7 @@
 		1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2375C230937AA007EDB0E /* ProfileViewController.swift */; };
 		1DA2375F23093B50007EDB0E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2375E23093B50007EDB0E /* Country.swift */; };
 		1DA2376123093B9E007EDB0E /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2376023093B9E007EDB0E /* CountryTableViewCell.swift */; };
+		1DA23763230B0A52007EDB0E /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */; };
 		1DF6C9A82308486B00943D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9A72308486B00943D1B /* AppDelegate.swift */; };
 		1DF6C9AA2308486B00943D1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9A92308486B00943D1B /* ViewController.swift */; };
 		1DF6C9AD2308486B00943D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF6C9AB2308486B00943D1B /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		1DA2375C230937AA007EDB0E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1DA2375E23093B50007EDB0E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1DA2376023093B9E007EDB0E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
 		1DF6C9A42308486B00943D1B /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF6C9A72308486B00943D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF6C9A92308486B00943D1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				1DF6C9C023084E3900943D1B /* LoginViewController.swift */,
 				1DA2375A23093788007EDB0E /* CountriesViewController.swift */,
 				1DA2375C230937AA007EDB0E /* ProfileViewController.swift */,
+				1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DA2375F23093B50007EDB0E /* Country.swift in Sources */,
+				1DA23763230B0A52007EDB0E /* CountryDetailsViewController.swift in Sources */,
 				1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */,
 				1DF6C9C123084E3A00943D1B /* LoginViewController.swift in Sources */,
 				1DF6C9BF23084E2800943D1B /* RegisterViewController.swift in Sources */,
