@@ -13,6 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var moonImageView: UIImageView!
+    @IBOutlet weak var orbitImageView: UIImageView!
+    @IBOutlet weak var globeImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
