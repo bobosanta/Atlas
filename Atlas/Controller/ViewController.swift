@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func registerButtonTapped(_ sender: Any) {
-        
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if error != nil {
+                print(error!)
+            } else {
+                //success
+                print("Registration successful")
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarcontroller") as! UITabBarController
+                UIApplication.shared.keyWindow?.rootViewController = viewController
+            }
+        }
+
     }
     
     @IBAction func signupFacebookTapped(_ sender: Any) {
