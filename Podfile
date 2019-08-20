@@ -8,4 +8,7 @@ target 'Atlas' do
   # Pods for Atlas
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 end
