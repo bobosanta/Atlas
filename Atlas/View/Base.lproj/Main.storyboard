@@ -231,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="2807" y="130"/>
         </scene>
-        <!--Favourites-->
+        <!--View Controller-->
         <scene sceneID="N20-Le-R3h">
             <objects>
                 <viewController id="1Bw-fO-PZR" sceneMemberID="viewController">
@@ -241,14 +241,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0nI-Qb-Q3p"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourites" id="QBc-lL-iRK"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="QBc-lL-iRK"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSG-Ig-tcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5521.739130434783" y="454.6875"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="bIn-BD-WdV">
             <objects>
                 <viewController id="EzF-Mk-F83" customClass="ProfileViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
@@ -273,7 +273,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tpf-VQ-0SO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="13f-DF-fYf"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="13f-DF-fYf"/>
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwV-ae-Uod" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,11 +396,11 @@
             </objects>
             <point key="canvasLocation" x="7461" y="-222"/>
         </scene>
-        <!--Countries-->
+        <!--Navigation Controller-->
         <scene sceneID="bDv-vU-F7X">
             <objects>
                 <navigationController id="mn4-ij-Oyg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Countries" id="a9t-1Z-SJ2"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="a9t-1Z-SJ2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h13-oe-Ep1">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
