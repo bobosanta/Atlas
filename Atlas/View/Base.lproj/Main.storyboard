@@ -101,7 +101,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44Y-D5-lFL">
                                         <rect key="frame" x="0.0" y="100" width="226" height="30"/>
                                         <state key="normal" title="Already have an account ? Log In">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQJ-hp-vK6"/>
@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XcZ-wE-HVq">
-                                <rect key="frame" x="30" y="454" width="354" height="182"/>
+                                <rect key="frame" x="30" y="170" width="354" height="182"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="caw-Ip-rHm">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -216,12 +216,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yds-eU-i5H" firstAttribute="bottom" secondItem="XcZ-wE-HVq" secondAttribute="bottom" constant="100" id="TbY-SH-C0j"/>
+                            <constraint firstItem="XcZ-wE-HVq" firstAttribute="top" secondItem="yds-eU-i5H" secondAttribute="top" constant="150" id="DIS-MJ-QUn"/>
                             <constraint firstItem="XcZ-wE-HVq" firstAttribute="leading" secondItem="yds-eU-i5H" secondAttribute="leading" constant="30" id="Ws4-V4-gdC"/>
                             <constraint firstItem="yds-eU-i5H" firstAttribute="trailing" secondItem="XcZ-wE-HVq" secondAttribute="trailing" constant="30" id="nug-Qk-eIU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yds-eU-i5H"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="caw-Ip-rHm" id="XKJ-2g-uKq"/>
+                        <outlet property="passwordTextField" destination="y2I-ba-BjR" id="GpC-U5-RjC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05M-kx-GXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
