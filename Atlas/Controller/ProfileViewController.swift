@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
@@ -19,9 +20,18 @@ class ProfileViewController: UIViewController {
 
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        if let navController = self.navigationController {
-            navController.popViewController(animated: true)
+        do {
+            try Auth.auth().signOut()
+            
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+            
+        } catch {
+            print("There was a problem. Signing out..")
         }
+        
+        
         
     }
     /*
