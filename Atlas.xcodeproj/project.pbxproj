@@ -19,7 +19,6 @@
 		1DF6C9AD2308486B00943D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF6C9AB2308486B00943D1B /* Main.storyboard */; };
 		1DF6C9AF2308486D00943D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF6C9AE2308486D00943D1B /* Assets.xcassets */; };
 		1DF6C9B22308486D00943D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF6C9B02308486D00943D1B /* LaunchScreen.storyboard */; };
-		1DF6C9BF23084E2800943D1B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9BE23084E2800943D1B /* RegisterViewController.swift */; };
 		1DF6C9C123084E3A00943D1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9C023084E3900943D1B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		1DF6C9AE2308486D00943D1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DF6C9B12308486D00943D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DF6C9B32308486D00943D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DF6C9BE23084E2800943D1B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1DF6C9C023084E3900943D1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		42FFB05A5A8FEBBF1BA7118B /* Pods-Atlas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atlas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Atlas/Pods-Atlas.debug.xcconfig"; sourceTree = "<group>"; };
 		805D3B81EA1F15CA0891B369 /* Pods-Atlas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atlas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Atlas/Pods-Atlas.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			children = (
 				1DF6C9A72308486B00943D1B /* AppDelegate.swift */,
 				1DF6C9A92308486B00943D1B /* ViewController.swift */,
-				1DF6C9BE23084E2800943D1B /* RegisterViewController.swift */,
 				1DF6C9C023084E3900943D1B /* LoginViewController.swift */,
 				1DA2375A23093788007EDB0E /* CountriesViewController.swift */,
 				1DA2375C230937AA007EDB0E /* ProfileViewController.swift */,
@@ -271,7 +268,6 @@
 				1DA23763230B0A52007EDB0E /* CountryDetailsViewController.swift in Sources */,
 				1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */,
 				1DF6C9C123084E3A00943D1B /* LoginViewController.swift in Sources */,
-				1DF6C9BF23084E2800943D1B /* RegisterViewController.swift in Sources */,
 				1DA2376123093B9E007EDB0E /* CountryTableViewCell.swift in Sources */,
 				1DF6C9AA2308486B00943D1B /* ViewController.swift in Sources */,
 				1DA2375B23093789007EDB0E /* CountriesViewController.swift in Sources */,
