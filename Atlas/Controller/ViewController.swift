@@ -11,8 +11,8 @@ import Firebase
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var moonImageView: UIImageView!
     @IBOutlet weak var orbitImageView: UIImageView!
     @IBOutlet weak var globeImageView: UIImageView!
@@ -55,6 +55,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if error != nil {
                 print(error!)
+                
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                
+                alert.addAction(okAction)
+                
+                self.present(alert, animated: true)
+                
             } else {
                 //success
                 print("Registration successful")

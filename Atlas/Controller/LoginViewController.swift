@@ -46,7 +46,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             
             if error != nil {
-                print(error)
+                print(error!)
+                
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                
+                alert.addAction(okAction)
+                
+                self.present(alert, animated: true)
+                
             } else {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarcontroller") as! UITabBarController
