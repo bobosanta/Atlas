@@ -14,6 +14,7 @@
 		1DA2376123093B9E007EDB0E /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2376023093B9E007EDB0E /* CountryTableViewCell.swift */; };
 		1DA23763230B0A52007EDB0E /* CountryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */; };
 		1DAAABD9230C3BAF0080FCFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DAAABD8230C3BAF0080FCFC /* GoogleService-Info.plist */; };
+		1DAAABDF230EFBDB0080FCFC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAAABDE230EFBDB0080FCFC /* CustomButton.swift */; };
 		1DF6C9A82308486B00943D1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9A72308486B00943D1B /* AppDelegate.swift */; };
 		1DF6C9AA2308486B00943D1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF6C9A92308486B00943D1B /* ViewController.swift */; };
 		1DF6C9AD2308486B00943D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF6C9AB2308486B00943D1B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		1DA2376023093B9E007EDB0E /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewController.swift; sourceTree = "<group>"; };
 		1DAAABD8230C3BAF0080FCFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DAAABDE230EFBDB0080FCFC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1DF6C9A42308486B00943D1B /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF6C9A72308486B00943D1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF6C9A92308486B00943D1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				1DA2376023093B9E007EDB0E /* CountryTableViewCell.swift */,
 				1DF6C9AB2308486B00943D1B /* Main.storyboard */,
+				1DAAABDE230EFBDB0080FCFC /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				1DA2375F23093B50007EDB0E /* Country.swift in Sources */,
 				1DA23763230B0A52007EDB0E /* CountryDetailsViewController.swift in Sources */,
+				1DAAABDF230EFBDB0080FCFC /* CustomButton.swift in Sources */,
 				1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */,
 				1DF6C9C123084E3A00943D1B /* LoginViewController.swift in Sources */,
 				1DA2376123093B9E007EDB0E /* CountryTableViewCell.swift in Sources */,
