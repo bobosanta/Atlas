@@ -23,6 +23,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
     func hideKeyboard() {
@@ -34,8 +38,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         hideKeyboard()
         return true
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
