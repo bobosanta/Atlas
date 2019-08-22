@@ -23,10 +23,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
-    
     func hideKeyboard() {
+        
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
