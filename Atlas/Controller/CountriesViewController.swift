@@ -36,7 +36,6 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let font = UIFont.systemFont(ofSize: 10)
         searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : font], for: .normal)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -139,8 +138,22 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         countriesTableView.reloadData()
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    //MARK: Keyboard dismiss
+    func dismissKeyboard() {
+        searchBar.text = ""
+        countriesTableView.reloadData()
         searchBar.resignFirstResponder()
+    }
+    
+    
+    // MARK: Cancel button tapped in search
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        currentCountryArray = countriesArray
+        dismissKeyboard()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dismissKeyboard()
     }
     
     //MARK: - Networking
@@ -169,7 +182,7 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedCountry = countriesArray[indexPath.row]
+        selectedCountry = currentCountryArray[indexPath.row]
         
         performSegue(withIdentifier: "showCountryDetails", sender: self)
         
