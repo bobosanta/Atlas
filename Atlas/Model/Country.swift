@@ -10,12 +10,15 @@ import Foundation
 
 class Country {
     
-    var name : String = ""
-    var capital : String = ""
+    var name: String = ""
+    var capital: String = ""
     var currency = ""
+    var region: String = ""
  
-    init(name: String, capital: String) {
+    init(name: String, capital: String, region: String) {
         self.name = name
         self.capital = capital
+        self.region = region
     }
+    
 }
