@@ -21,10 +21,11 @@ class ProfileViewController: UIViewController {
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
         do {
-            try Auth.auth().signOut()
+            try! Auth.auth().signOut()
             
-            if let navController = self.navigationController {
-                navController.popViewController(animated: true)
+            if let storyboard = self.storyboard {
+                let vc = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+                self.present(vc, animated: false, completion: nil)
             }
             
         } catch {
