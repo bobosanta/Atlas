@@ -38,18 +38,6 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : font], for: .normal)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
-        // Show the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentCountryArray.count
     }
