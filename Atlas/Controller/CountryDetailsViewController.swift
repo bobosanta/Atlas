@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SVGKit
 
 class CountryDetailsViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
+    @IBOutlet weak var flagImage: UIImageView!
     
     var country: Country!
     
@@ -24,8 +26,14 @@ class CountryDetailsViewController: UIViewController {
     
    private func updateUI() {
         
-        nameLabel.text = country.name
-        
+        capitalLabel.text = country.capital
+    
+    if let flagUrl = URL(string: country.flag) {
+    DispatchQueue.main.async {
+            self.flagImage.image = SVGKImage(contentsOf: flagUrl).uiImage
+        }
+    }
+    
     }
     
 

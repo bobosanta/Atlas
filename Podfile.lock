@@ -1,5 +1,10 @@
 PODS:
   - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
   - Firebase (6.6.0):
     - Firebase/Core (= 6.6.0)
   - Firebase/Auth (6.6.0):
@@ -83,18 +88,24 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - Firebase
   - Firebase/Auth
   - Firebase/Database
+  - SVGKit
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
+    - CocoaLumberjack
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -111,10 +122,13 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - SVGKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   Firebase: a2b5951f30ff38fd3b3bdae9c7d340f940fd3c51
   FirebaseAnalytics: 48414ae5cbf6976d8a2f7177e0466540e5ab33ce
   FirebaseAuth: 2be1924ddbc741fe2a02cb6963ca747e09a2e05c
@@ -131,8 +145,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: e0a451534736570fe7b4f21e53238307b33528ca
+PODFILE CHECKSUM: 1b96b8fc063d986829f849ee3c8a5c9d71c3f840
 
 COCOAPODS: 1.5.3

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Country {
     
@@ -14,11 +15,13 @@ class Country {
     var capital: String = ""
     var currency = ""
     var region: String = ""
+    var flag: String = ""
  
-    init(name: String, capital: String, region: String) {
+    init(name: String, capital: String, region: String, flag: String) {
         self.name = name
         self.capital = capital
         self.region = region
+        self.flag = flag
     }
     
 }

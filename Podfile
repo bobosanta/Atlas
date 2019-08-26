@@ -11,4 +11,6 @@ target 'Atlas' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'AlamofireImage'
+  pod 'SVGKit'
 end
