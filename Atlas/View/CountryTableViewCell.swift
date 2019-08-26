@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVGKit
 
 class CountryTableViewCell: UITableViewCell {
 
@@ -19,6 +20,7 @@ class CountryTableViewCell: UITableViewCell {
         countryName.text = country.name
         countryCapital.text = country.capital
         countryRegion.text = country.region
+    
     }
     
 }

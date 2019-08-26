@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AlamofireImage
+import SVGKit
 
 class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -156,11 +158,12 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                 for countryDictionary:[String:Any] in responseData {
                     if let name = countryDictionary["name"] as? String,
                         let capital = countryDictionary["capital"] as? String,
-                        let region = countryDictionary["region"] as? String {
-                    
-                        let country = Country(name: name, capital: capital, region: region)
-                        self.currentCountryArray = self.countriesArray
-                        self.countriesArray.append(country)
+                        let region = countryDictionary["region"] as? String,
+                        let flagUrlString = countryDictionary["flag"] as? String {
+                        
+                            let country = Country(name: name, capital: capital, region: region, flag: flagUrlString)
+                            self.currentCountryArray = self.countriesArray
+                            self.countriesArray.append(country)
                     }
                 }
                 self.countriesTableView.reloadData()
@@ -180,6 +183,8 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let vc = segue.destination as? CountryDetailsViewController {
+            
+            vc.title = selectedCountry?.name
             
             vc.country = selectedCountry
             
