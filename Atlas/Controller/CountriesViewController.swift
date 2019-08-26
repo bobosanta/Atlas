@@ -159,9 +159,12 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                     if let name = countryDictionary["name"] as? String,
                         let capital = countryDictionary["capital"] as? String,
                         let region = countryDictionary["region"] as? String,
-                        let flagUrlString = countryDictionary["flag"] as? String {
+                        let flagUrlString = countryDictionary["flag"] as? String,
+                        let subregion = countryDictionary["subregion"] as? String,
+                        let population = countryDictionary["population"] as? Int {
                         
-                            let country = Country(name: name, capital: capital, region: region, flag: flagUrlString)
+                            let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population)
+                        
                             self.currentCountryArray = self.countriesArray
                             self.countriesArray.append(country)
                     }

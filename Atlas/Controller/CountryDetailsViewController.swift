@@ -13,6 +13,9 @@ class CountryDetailsViewController: UIViewController {
 
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var subregionLabel: UILabel!
+    @IBOutlet weak var populationLabel: UILabel!
+    @IBOutlet weak var currencyLabel: UILabel!
     
     var country: Country!
     
@@ -26,7 +29,10 @@ class CountryDetailsViewController: UIViewController {
     
    private func updateUI() {
     
-    capitalLabel.text = country.capital
+    capitalLabel.text = "Capital : " + country.capital
+    subregionLabel.text = country.subregion
+    populationLabel.text = String(country.population)
+//    currencyLabel.text = String(country.currency)
     
     flagImage.layer.cornerRadius = flagImage.frame.size.width / 2
     flagImage.clipsToBounds = true
