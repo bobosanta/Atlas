@@ -25,8 +25,11 @@ class CountryDetailsViewController: UIViewController {
     }
     
    private func updateUI() {
-        
-        capitalLabel.text = country.capital
+    
+    capitalLabel.text = country.capital
+    
+    flagImage.layer.cornerRadius = flagImage.frame.size.width / 2
+    flagImage.clipsToBounds = true
     
     if let flagUrl = URL(string: country.flag) {
     DispatchQueue.main.async {
