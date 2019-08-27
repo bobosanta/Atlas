@@ -18,8 +18,10 @@ class Country {
     var flag: String = ""
     var subregion: String = ""
     var population: Int = 0
+    var lat: Double = 0
+    var long: Double = 0
  
-    init(name: String, capital: String, region: String, flag: String, subregion: String, population: Int, currency: String) {
+    init(name: String, capital: String, region: String, flag: String, subregion: String, population: Int, currency: String, lat: Double, long: Double) {
         self.name = name
         self.capital = capital
         self.region = region
@@ -27,6 +29,8 @@ class Country {
         self.subregion = subregion
         self.population = population
         self.currency = currency
+        self.lat = lat
+        self.long = long
     }
     
 }

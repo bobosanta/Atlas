@@ -8,6 +8,7 @@
 
 import UIKit
 import SVGKit
+import MapKit
 
 class CountryDetailsViewController: UIViewController {
 
@@ -16,15 +17,34 @@ class CountryDetailsViewController: UIViewController {
     @IBOutlet weak var subregionLabel: UILabel!
     @IBOutlet weak var populationLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
     
     var country: Country!
+    
+    let regionInMeters: Double = 100000
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        displayLocation()
         updateUI()
+        
+    }
+    
+    func displayLocation() {
 
-        // Do any additional setup after loading the view.
+        mapView.layer.cornerRadius = 20
+        
+        let countryLocation = CLLocation(latitude: country.lat, longitude: country.long)
+        
+        mapView.setCenter(countryLocation.coordinate, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: countryLocation.coordinate.latitude, longitude: countryLocation.coordinate.longitude)
+        mapView.addAnnotation(annotation)
+        
     }
     
    private func updateUI() {
