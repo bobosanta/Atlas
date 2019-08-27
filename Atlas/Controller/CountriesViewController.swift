@@ -164,9 +164,14 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                         let population = countryDictionary["population"] as? Int,
                         let currencies = countryDictionary["currencies"] as? [[String:Any]],
                         let currency = currencies.first,
-                        let currencySymbol = currency["symbol"] as? String {
+                        let currencySymbol = currency["symbol"] as? String,
+                        let latlng = countryDictionary["latlng"] as? [Double],
+                        let latitude = latlng.first,
+                        let longitude = latlng.last {
                         
-                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol)
+                        print(latlng)
+                        
+                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude))
                         
                         self.currentCountryArray = self.countriesArray
                         self.countriesArray.append(country)
