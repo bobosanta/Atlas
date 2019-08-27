@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import AlamofireImage
 import SVGKit
+import Firebase
 
 class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     

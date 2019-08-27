@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_bg" translatesAutoresizingMaskIntoConstraints="NO" id="EVM-wa-BHT">
-                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asset 23" translatesAutoresizingMaskIntoConstraints="NO" id="dpc-qE-bBb" userLabel="globe">
                                 <rect key="frame" x="132" y="90" width="150" height="150"/>
@@ -188,7 +188,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pQP-xU-ZCr">
-                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XcZ-wE-HVq">
                                 <rect key="frame" x="30" y="309" width="354" height="182"/>

@@ -23,6 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         myDatabase.setValue("We got data")
         
+        Auth.auth().addStateDidChangeListener { [weak self] (_, user) in
+            if let user = user {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarcontroller") as! UITabBarController
+                UIApplication.shared.keyWindow?.rootViewController = viewController
+            } else {
+                // user is not logged in
+            }
+        }
+        
         return true
     }
 
