@@ -32,7 +32,7 @@ class CountryDetailsViewController: UIViewController {
     capitalLabel.text = "Capital : " + country.capital
     subregionLabel.text = country.subregion
     populationLabel.text = String(country.population)
-//    currencyLabel.text = String(country.currency)
+    currencyLabel.text = String(country.currency)
     
     flagImage.layer.cornerRadius = flagImage.frame.size.width / 2
     flagImage.clipsToBounds = true

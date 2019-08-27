@@ -161,16 +161,19 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                         let region = countryDictionary["region"] as? String,
                         let flagUrlString = countryDictionary["flag"] as? String,
                         let subregion = countryDictionary["subregion"] as? String,
-                        let population = countryDictionary["population"] as? Int {
+                        let population = countryDictionary["population"] as? Int,
+                        let currencies = countryDictionary["currencies"] as? [[String:Any]],
+                        let currency = currencies.first,
+                        let currencySymbol = currency["symbol"] as? String {
                         
-                            let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population)
+                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol)
                         
-                            self.currentCountryArray = self.countriesArray
-                            self.countriesArray.append(country)
+                        self.currentCountryArray = self.countriesArray
+                        self.countriesArray.append(country)
+                        }
                     }
-                }
-                self.countriesTableView.reloadData()
             }
+            self.countriesTableView.reloadData()
         }
     }
     
