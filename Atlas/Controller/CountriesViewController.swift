@@ -171,8 +171,6 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                         let latitude = latlng.first,
                         let longitude = latlng.last {
                         
-                        print(latlng)
-                        
                         let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude))
                         
                         self.currentCountryArray = self.countriesArray
