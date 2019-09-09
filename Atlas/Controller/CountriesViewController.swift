@@ -16,6 +16,7 @@ import RealmSwift
 
 class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    let realm = try! Realm()
     var countriesArray = [Country]()
     var selectedCountry: Country?
     var currentCountryArray = [Country]() //update array
@@ -171,10 +172,13 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
                         let latitude = latlng.first,
                         let longitude = latlng.last {
                         
-                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude))
+                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude), favourite: false)
                         
                         self.currentCountryArray = self.countriesArray
                         self.countriesArray.append(country)
+                        
+                        self.saveCountries(country: country)
+                        
                         }
                     }
             }
@@ -201,6 +205,16 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
             
         }
         
+    }
+    
+    func saveCountries(country: Country) {
+        do {
+            try realm.write {
+                realm.add(country)
+            }
+        } catch {
+            print("Error adding new country \(error)")
+        }
     }
 
 }

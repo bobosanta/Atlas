@@ -11,4 +11,5 @@ import RealmSwift
 
 class Favourites: Object {
     @objc dynamic var name: String = ""
+    let countries = List<Country>()
 }

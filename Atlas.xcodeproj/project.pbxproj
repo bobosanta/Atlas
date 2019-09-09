@@ -94,8 +94,8 @@
 		1DF6C9B92308493400943D1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DA2375E23093B50007EDB0E /* Country.swift */,
 				1D4692C12326A74D00CF413B /* Favourites.swift */,
+				1DA2375E23093B50007EDB0E /* Country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

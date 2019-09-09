@@ -19,16 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //        MARK: Realm
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-        
-        let favourites = Favourites()
-        favourites.name = "Favourites"
-        
         do {
             let realm = try Realm()
-            try realm.write {
-                realm.add(favourites)
-            }
         } catch {
             print("Error creating a new Realm \(error)")
         }
