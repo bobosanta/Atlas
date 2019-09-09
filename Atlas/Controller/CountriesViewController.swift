@@ -12,6 +12,7 @@ import SwiftyJSON
 import AlamofireImage
 import SVGKit
 import Firebase
+import RealmSwift
 
 class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     

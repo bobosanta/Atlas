@@ -13,4 +13,5 @@ target 'Atlas' do
   pod 'Firebase/Database'
   pod 'AlamofireImage'
   pod 'SVGKit'
+  pod 'RealmSwift'
 end
