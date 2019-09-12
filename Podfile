@@ -14,4 +14,5 @@ target 'Atlas' do
   pod 'AlamofireImage'
   pod 'SVGKit'
   pod 'RealmSwift'
+  pod 'SwipeCellKit'
 end

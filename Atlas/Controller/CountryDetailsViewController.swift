@@ -26,8 +26,6 @@ class CountryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         displayLocation()
         updateUI()
         
@@ -35,7 +33,10 @@ class CountryDetailsViewController: UIViewController {
     
     func displayLocation() {
 
-        mapView.layer.cornerRadius = 20
+//        mapView.layer.cornerRadius = 20
+        mapView.round(corners: [.bottomRight, .bottomLeft], radius: 10)
+        mapView.layer.shadowRadius = 25.0
+        mapView.layer.shadowOpacity = 0.9
         
         let countryLocation = CLLocation(latitude: country.lat, longitude: country.long)
         
@@ -49,22 +50,33 @@ class CountryDetailsViewController: UIViewController {
     
    private func updateUI() {
     
-    capitalLabel.text = "Capital : " + country.capital
-    subregionLabel.text = country.subregion
-    populationLabel.text = String(country.population)
-    currencyLabel.text = String(country.currency)
+        capitalLabel.text = "Capital : " + country.capital
+        subregionLabel.text = country.subregion
+        populationLabel.text = String(country.population)
+        currencyLabel.text = String(country.currency)
     
-    flagImage.layer.cornerRadius = flagImage.frame.size.width / 2
-    flagImage.clipsToBounds = true
+        flagImage.layer.cornerRadius = flagImage.frame.size.width / 2
+        flagImage.clipsToBounds = true
     
-    if let flagUrl = URL(string: country.flag) {
-    DispatchQueue.main.async {
-            self.flagImage.image = SVGKImage(contentsOf: flagUrl).uiImage
+        if let flagUrl = URL(string: country.flag) {
+        DispatchQueue.main.async {
+                self.flagImage.image = SVGKImage(contentsOf: flagUrl).uiImage
+            }
         }
-    }
     
     }
-    
-
     
 }
+
+extension MKMapView {
+    
+    func round(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
+}
+
+
