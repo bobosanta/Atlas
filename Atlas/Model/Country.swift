@@ -8,20 +8,24 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class Country {
+class Country: Object {
     
-    var name: String = ""
-    var capital: String = ""
-    var currency: String = ""
-    var region: String = ""
-    var flag: String = ""
-    var subregion: String = ""
-    var population: Int = 0
-    var lat: Double = 0
-    var long: Double = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var capital: String = ""
+    @objc dynamic var currency: String = ""
+    @objc dynamic var region: String = ""
+    @objc dynamic var flag: String = ""
+    @objc dynamic var subregion: String = ""
+    @objc dynamic var population: Int = 0
+    @objc dynamic var lat: Double = 0
+    @objc dynamic var long: Double = 0
+    @objc dynamic var favourite: Bool = false
+    var parentFavourites = LinkingObjects(fromType: Favourites.self, property: "countries")
  
-    init(name: String, capital: String, region: String, flag: String, subregion: String, population: Int, currency: String, lat: Double, long: Double) {
+    convenience init(name: String, capital: String, region: String, flag: String, subregion: String, population: Int, currency: String, lat: Double, long: Double, favourite: Bool) {
+        self.init()
         self.name = name
         self.capital = capital
         self.region = region

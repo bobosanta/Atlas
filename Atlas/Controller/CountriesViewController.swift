@@ -14,8 +14,9 @@ import SVGKit
 import Firebase
 import RealmSwift
 
-class CountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class CountriesViewController: UIViewController {
     
+    let realm = try! Realm()
     var countriesArray = [Country]()
     var selectedCountry: Country?
     var currentCountryArray = [Country]() //update array
@@ -31,6 +32,7 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         countriesTableView.dataSource = self
         
         setUpSearchBar()
+        
         getCountriesData()
         
     }
@@ -41,6 +43,86 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         let font = UIFont.systemFont(ofSize: 10)
         searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue) : font], for: .normal)
     }
+   
+    //MARK: - Networking
+    /***************************************************************/
+
+    func getCountriesData() {
+        
+        if realm.objects(Country.self).isEmpty {
+            
+            Alamofire.request("https://restcountries.eu/rest/v2/all").responseJSON { (responseData) -> Void in
+                
+                if let responseData = responseData.result.value as! [[String: Any]]? {
+                    
+                    for countryDictionary:[String:Any] in responseData {
+                        if let name = countryDictionary["name"] as? String,
+                            let capital = countryDictionary["capital"] as? String,
+                            let region = countryDictionary["region"] as? String,
+                            let flagUrlString = countryDictionary["flag"] as? String,
+                            let subregion = countryDictionary["subregion"] as? String,
+                            let population = countryDictionary["population"] as? Int,
+                            let currencies = countryDictionary["currencies"] as? [[String:Any]],
+                            let currency = currencies.first,
+                            let currencySymbol = currency["symbol"] as? String,
+                            let latlng = countryDictionary["latlng"] as? [Double],
+                            let latitude = latlng.first,
+                            let longitude = latlng.last {
+                            
+                                let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude), favourite: false)
+                            
+                                self.currentCountryArray = self.countriesArray
+                                self.countriesArray.append(country)
+                            
+                                self.saveCountries(country: country)
+                            
+                            }
+                        }
+                }
+                self.countriesTableView.reloadData()
+            }
+        } else {
+            loadCountries()
+        }
+    }
+    
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? CountryDetailsViewController {
+            
+            vc.title = selectedCountry?.name
+            
+            vc.country = selectedCountry
+            
+        }
+        
+    }
+    
+    func saveCountries(country: Country) {
+        do {
+            try realm.write {
+                realm.add(country)
+            }
+        } catch {
+            print("Error adding new country \(error)")
+        }
+    }
+    
+    func loadCountries() {
+
+        let countries = realm.objects(Country.self)
+        countriesArray = Array(realm.objects(Country.self))
+        currentCountryArray = countriesArray
+        
+        countriesTableView.reloadData()
+
+    }
+
+}
+
+extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentCountryArray.count
@@ -57,6 +139,20 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedCountry = currentCountryArray[indexPath.row]
+        
+        performSegue(withIdentifier: "showCountryDetails", sender: self)
+        
+        
+    }
+    
+}
+
+extension CountriesViewController: UISearchBarDelegate {
+    
+    
     //MARK: - Search bar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -68,7 +164,7 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
             case 1:
                 if searchText.isEmpty { return country.region == "Africa" }
                 return country.name.lowercased().contains(searchText.lowercased()) &&
-                country.region == "Africa"
+                    country.region == "Africa"
             case 2:
                 if searchText.isEmpty { return country.region == "Americas" }
                 return country.name.lowercased().contains(searchText.lowercased()) &&
@@ -148,61 +244,5 @@ class CountriesViewController: UIViewController, UITableViewDelegate, UITableVie
         dismissKeyboard()
     }
     
-    //MARK: - Networking
-    /***************************************************************/
-
-    func getCountriesData() {
-        
-        Alamofire.request("https://restcountries.eu/rest/v2/all").responseJSON { (responseData) -> Void in
-            
-            if let responseData = responseData.result.value as! [[String: Any]]? {
-                
-                for countryDictionary:[String:Any] in responseData {
-                    if let name = countryDictionary["name"] as? String,
-                        let capital = countryDictionary["capital"] as? String,
-                        let region = countryDictionary["region"] as? String,
-                        let flagUrlString = countryDictionary["flag"] as? String,
-                        let subregion = countryDictionary["subregion"] as? String,
-                        let population = countryDictionary["population"] as? Int,
-                        let currencies = countryDictionary["currencies"] as? [[String:Any]],
-                        let currency = currencies.first,
-                        let currencySymbol = currency["symbol"] as? String,
-                        let latlng = countryDictionary["latlng"] as? [Double],
-                        let latitude = latlng.first,
-                        let longitude = latlng.last {
-                        
-                        print(latlng)
-                        
-                        let country = Country(name: name, capital: capital, region: region, flag: flagUrlString, subregion: subregion, population: population, currency: currencySymbol, lat: Double(latitude), long: Double(longitude))
-                        
-                        self.currentCountryArray = self.countriesArray
-                        self.countriesArray.append(country)
-                        }
-                    }
-            }
-            self.countriesTableView.reloadData()
-        }
-    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        selectedCountry = currentCountryArray[indexPath.row]
-        
-        performSegue(withIdentifier: "showCountryDetails", sender: self)
-        
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let vc = segue.destination as? CountryDetailsViewController {
-            
-            vc.title = selectedCountry?.name
-            
-            vc.country = selectedCountry
-            
-        }
-        
-    }
-
 }
