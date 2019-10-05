@@ -33,7 +33,6 @@ class CountryDetailsViewController: UIViewController {
     
     func displayLocation() {
 
-//        mapView.layer.cornerRadius = 20
         mapView.round(corners: [.bottomRight, .bottomLeft], radius: 10)
         mapView.layer.shadowRadius = 25.0
         mapView.layer.shadowOpacity = 0.9
