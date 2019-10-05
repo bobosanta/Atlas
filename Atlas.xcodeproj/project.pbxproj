@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04E376F30505D937A99B8FFB /* Pods_Atlas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1605173D2DDE22E334A00B75 /* Pods_Atlas.framework */; };
 		1D4692C22326A74D00CF413B /* Favourites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4692C12326A74D00CF413B /* Favourites.swift */; };
+		1D6B53B7232A923200362E02 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6B53B6232A923200362E02 /* FavouritesTableViewController.swift */; };
 		1DA2375B23093789007EDB0E /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2375A23093788007EDB0E /* CountriesViewController.swift */; };
 		1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2375C230937AA007EDB0E /* ProfileViewController.swift */; };
 		1DA2375F23093B50007EDB0E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2375E23093B50007EDB0E /* Country.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		1605173D2DDE22E334A00B75 /* Pods_Atlas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Atlas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4692C12326A74D00CF413B /* Favourites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favourites.swift; sourceTree = "<group>"; };
+		1D6B53B6232A923200362E02 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 		1DA2375A23093788007EDB0E /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		1DA2375C230937AA007EDB0E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1DA2375E23093B50007EDB0E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				1DA2375A23093788007EDB0E /* CountriesViewController.swift */,
 				1DA2375C230937AA007EDB0E /* ProfileViewController.swift */,
 				1DA23762230B0A52007EDB0E /* CountryDetailsViewController.swift */,
+				1D6B53B6232A923200362E02 /* FavouritesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -268,6 +272,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -288,6 +293,7 @@
 				1DAAABDF230EFBDB0080FCFC /* CustomButton.swift in Sources */,
 				1DA2375D230937AA007EDB0E /* ProfileViewController.swift in Sources */,
 				1DAAABE1230EFDC90080FCFC /* CustomTextField.swift in Sources */,
+				1D6B53B7232A923200362E02 /* FavouritesTableViewController.swift in Sources */,
 				1DF6C9C123084E3A00943D1B /* LoginViewController.swift in Sources */,
 				1DA2376123093B9E007EDB0E /* CountryTableViewCell.swift in Sources */,
 				1D4692C22326A74D00CF413B /* Favourites.swift in Sources */,

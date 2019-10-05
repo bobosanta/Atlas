@@ -13,6 +13,7 @@ import AlamofireImage
 import SVGKit
 import Firebase
 import RealmSwift
+import SwipeCellKit
 
 class CountriesViewController: UIViewController {
     
@@ -122,7 +123,7 @@ class CountriesViewController: UIViewController {
 
 }
 
-extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
+extension CountriesViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentCountryArray.count
@@ -130,13 +131,16 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as? CountryTableViewCell {
         
-        let country = currentCountryArray[indexPath.row]
-        cell.configure(with: country)
-        
-        return cell
-        
+            let country = currentCountryArray[indexPath.row]
+            cell.configure(with: country)
+            cell.delegate = self
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -145,7 +149,33 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource {
         
         performSegue(withIdentifier: "showCountryDetails", sender: self)
         
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        let country = self.currentCountryArray[indexPath.row]
+        let favouriteAction = SwipeAction(style: .default, title: country.favourite ? "Unfavourite" : "Favourite") { action, indexPath in
+            do {
+                try self.realm.write {
+                    country.favourite = !country.favourite
+                }
+            } catch {
+                print("Error updating realm \(error)")
+            }
+        }
         
+        // customize the action appearance
+//        favouriteAction.image = UIImage(named: "delete")
+        
+        
+        return [favouriteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .selection
+        options.transitionStyle = .border
+        return options
     }
     
 }
