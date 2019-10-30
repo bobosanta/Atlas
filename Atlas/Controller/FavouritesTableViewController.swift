@@ -33,12 +33,13 @@ class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITa
 
     // MARK: - Table view data source
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return favouriteCountries.isEmpty ? 1 : favouriteCountries.count
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return favouriteCountries.isEmpty ? 1 : favouriteCountries.count
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favouriteCountries.count
+//        return favouriteCountries.count
+        return favouriteCountries.isEmpty ? 1 : favouriteCountries.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,9 +58,10 @@ class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCountry = favouriteCountries[indexPath.row]
-        
-        performSegue(withIdentifier: "showCountryDetails", sender: self)
+        if !favouriteCountries.isEmpty {
+            selectedCountry = favouriteCountries[indexPath.row]
+            performSegue(withIdentifier: "showCountryDetails", sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {

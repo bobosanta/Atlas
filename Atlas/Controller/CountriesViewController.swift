@@ -164,10 +164,6 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource, S
             }
         }
         
-        // customize the action appearance
-//        favouriteAction.image = UIImage(named: "delete")
-        
-        
         return [favouriteAction]
     }
     
@@ -181,7 +177,6 @@ extension CountriesViewController: UITableViewDelegate, UITableViewDataSource, S
 }
 
 extension CountriesViewController: UISearchBarDelegate {
-    
     
     //MARK: - Search bar
     
